@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Super Carros</h1>
+    <p class="lead">El portal lider para interesados en comprar y vender vehículos en República Dominicana, con el mayor tráfico especializado para el mercado automotriz.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Busca tu Auto Soñado</h2>
+        <p>
+            Busca tu auto soñado en Super Carros, aquí econtrarás la mayor variedad de vehículos y la más alta calidad. Confía en nosotros y compra tu vehículo con nuestros préstmos y cuotas.
+        </p>
+        <p class="btn btn-default">@Html.ActionLink("Ver Autos", "Display", "Cars")</p>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Inscríbete como Vendedor</h2>
+        <p>Unete a nuestra comunidad de vendedores de autos de Super Carros, vuélvete uno más de nosotros y conviértete en un Super Vendedor.</p>
+        <p class="btn btn-default">@Html.ActionLink("Inscríbete!", "Create", "Sellers")</p>
+
+    </div>
+    <div class="col-md-4">
+        <h2>Vende tu auto con Nosotros</h2>
+        <p>Registra tu  Auto con nosotros, presenta tu publicación a millones de personas y vende tu auto en cuestión de segundos.</p>
+        <p class="btn btn-default">@Html.ActionLink("Véndelo Ya!", "Create", "Cars")</p>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<CarsProjectNET.Car>
+
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2 style="margin-bottom: 15px;">Elige el carro de tus sueños</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-3">
+
+            <p>@Html.ActionLink("Details", "Details", new { id = item.Id })</p>
+            
+            <img src="~/Public/Cars/@(string.IsNullOrEmpty(item.Picture) ? "Default-car.png" : item.Picture)" style="height:200px; width:200px;"/>
+        </div>
+    }
+</div>
+            
+ 
+            
+

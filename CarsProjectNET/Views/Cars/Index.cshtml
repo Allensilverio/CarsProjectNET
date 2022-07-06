@@ -1,0 +1,94 @@
+﻿@model IEnumerable<CarsProjectNET.Car>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Foto
+        </th>
+        <th>
+            Precio
+        </th>
+        <th style="width:150px;">
+            Detalle
+        </th>
+        <th>
+            Condición
+        </th>
+        <th>
+            Color
+        </th>
+
+        <th>
+            Combustible
+        </th>
+        <th>
+            Transmisión
+        </th>
+        <th>
+            Vendedor
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Enabled)
+        </th>
+        <th>
+            Fecha de Creación
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="~/Public/Cars/@(string.IsNullOrEmpty(item.Picture) ? "Default-car.png" : item.Picture)" style="height:75px; width:75px;" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ListPrice)
+        </td>
+        <td>
+            Marca: @Html.DisplayFor(modelItem => item.Mark.MarkName) <br />
+            Modelo: @Html.DisplayFor(modelItem => item.MarkModel.MarkModelName) <br />
+            Año: @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Condition)
+        </td>
+        <td>
+            Exterior: @Html.DisplayFor(modelItem => item.ExteriorColor) <br />
+            Interior: @Html.DisplayFor(modelItem => item.InteriorColor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fuel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Transmission)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Seller.SellerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Enabled)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+        </td>
+
+
+
+    </tr>
+}
+
+</table>
